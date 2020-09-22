@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b5fc8f8f-8aea-40f8-8685-735ac3dab85f" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1277161566">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="iml" value="1" />
+          <entry key="properties" value="9" />
+          <entry key="scala" value="19" />
+          <entry key="sql" value="2" />
+          <entry key="timestamp" value="2" />
+          <entry key="xml" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Properties" value="9" />
+          <entry key="SQL" value="2" />
+          <entry key="Scala" value="19" />
+          <entry key="XML" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="properties" value="19" />
+          <entry key="scala" value="430" />
+          <entry key="xml" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Properties" value="19" />
+          <entry key="Scala" value="430" />
+          <entry key="XML" value="7" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/xml/ToScan.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/preprocess/CleanProcess.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="177" column="85" lean-forward="true" selection-start-line="177" selection-start-column="85" selection-end-line="177" selection-end-column="85" />
+              <folding>
+                <element signature="e#31#64#0" expanded="true" />
+                <element signature="e#1196#3024#0" />
+                <element signature="e#1521#1655#0" />
+                <element signature="e#1840#2165#0" />
+                <element signature="e#1908#1971#0" />
+                <element signature="e#1977#2159#0" />
+                <element signature="e#2171#2321#0" />
+                <element signature="e#3029#4083#0" />
+                <element signature="e#3407#3675#0" />
+                <element signature="e#4087#4156#0" />
+                <element signature="e#4087#4727#0" />
+                <element signature="e#4260#4654#0" />
+                <element signature="e#4309#4570#0" />
+                <element signature="e#4355#4415#0" />
+                <element signature="e#4576#4648#0" />
+                <element signature="e#4660#4722#0" />
+                <element signature="e#4731#4793#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/xml/ToScanLocal.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1415">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/xml/ForecastLocal.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-26">
+              <caret line="438" column="5" selection-start-line="438" selection-start-column="5" selection-end-line="438" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Package Object" />
+        <option value="Scala Object" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>on_the_way_waybill</find>
+      <find>new_route</find>
+      <find>saveNotWay</find>
+      <find>unload_task_org</find>
+      <find>unload_unscan</find>
+      <find>unload_waybill</find>
+      <find>load_waybill</find>
+      <find>tray_waybill</find>
+      <find>scan_waybill</find>
+      <find>loadwarning_waybill</find>
+      <find>local</find>
+      <find>isLocal</find>
+      <find>now_department_name</find>
+      <find>unload_org_name</find>
+      <find>save</find>
+      <find>temTableName</find>
+      <find>leave_department_name</find>
+      <find>addMinutes</find>
+      <find>depart_org_name</find>
+      <find>hb.</find>
+      <find>name</find>
+      <find>sign</find>
+      <find>sort</find>
+      <find>tmp</find>
+      <find>\</find>
+      <find>p</find>
+      <find>装车任务关联获取相关时间</find>
+      <find>newTemplate</find>
+      <find>show</find>
+      <find>saveAsTable</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>split</replace>
+      <replace>time</replace>
+      <replace>prop</replace>
+      <replace>Warning</replace>
+      <replace>DFToHiveTable</replace>
+      <replace>Forecast</replace>
+      <replace>spark</replace>
+      <replace>dateFormat(bill_time)</replace>
+      <replace>center</replace>
+      <replace>customer_pickup_department_code</replace>
+      <replace>.</replace>
+      <replace>id</replace>
+      <replace>tmp6</replace>
+      <replace>tmp7</replace>
+      <replace>tmp8</replace>
+      <replace>tmp9</replace>
+      <replace>res2</replace>
+      <replace>tmp1</replace>
+      <replace>tmp2</replace>
+      <replace>tmp3</replace>
+      <replace>tmp4</replace>
+      <replace>tmp5</replace>
+      <replace>res1</replace>
+      <replace>scan</replace>
+      <replace>t</replace>
+      <replace>/</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/common/clean/DataToHive.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/spark/UnloadUnscan.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/spark/LoadWarning.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/spark/ExpectedVolume_EXP.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/util/SqlParsers.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/clean/scriptFile.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/jdbc/JDBCHelper.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/jdbc/DataToFront.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/common.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/1hour.properties" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/clean/DataToHive.scala" />
+        <option value="$PROJECT_DIR$/.idea/.name" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/spark/T.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/clean/HiveDataClean.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/local.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/1h.properties" />
+        <option value="$PROJECT_DIR$/target/classes/resource.properties" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/clean/CleanProcess.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/clean/DataClean.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/util/DateUtils.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/clean/DFToHiveTable.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/util/RegTempOrWriteHive.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/util/XMLSqlParsers.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/a.properties" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/util/SparkMode.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/spark/Warning.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/SQLsource.properties" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/spark/Forecast.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/spark/ToScan.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/process/ToScan.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/preproess/Df2Hive.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/preproess/DataClean.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/xml/WarningLocal.xml" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/process/Warning.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/preproess/CleanProcess.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/utils/DateUtils.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/xml/ToScan.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/xml/ToScanLocal.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/xml/ForecastLocal.xml" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/utils/SparkMode.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/xml/Warning.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mysql.sql" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/utils/RegTempOrWriteHive.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/xml/Forecast.xml" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/process/Forecast.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/test/DataClean.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/preprocess/DataClean.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/resource.properties" />
+        <option value="$PROJECT_DIR$/src/main/scala/cn/kgc/exp/preprocess/CleanProcess.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/kgc/test/DataClean.scala" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="G:\jarstore" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../software/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="G:\backup\f\sunyong\Java\software\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="kgc" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="kgc" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="677" />
+    <option name="width" value="610" />
+    <option name="height" value="727" />
+  </component>
+  <component name="ProjectId" id="1STBhwAz2dCjqulbWQ5yKqhOMng" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="xml" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="kgc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="kgc" type="462c0819:PsiDirectoryNode" />
+              <item name="exp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="kgc" type="462c0819:PsiDirectoryNode" />
+              <item name="exp" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocess" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="kgc" type="462c0819:PsiDirectoryNode" />
+              <item name="exp" type="462c0819:PsiDirectoryNode" />
+              <item name="process" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="kgc" type="462c0819:PsiDirectoryNode" />
+              <item name="exp" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="kgc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="kgc" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="maven-status" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kgc_datawarehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kgc_datawarehouse" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="maven-status" type="462c0819:PsiDirectoryNode" />
+              <item name="maven-compiler-plugin" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="CatdeaLogs" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="java.lang.StackOverflowError&#9;PSI&#9;JAVA://java.lang.StackOverflowError" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1599803522751" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.42145595" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/test/scala/kgc/RegTempOrWriteHive.scala" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\softwarePage\Tencent\talkrecord\46006715\FileRecv\kgc\src\main\resources\mapper-xml" />
+      <recent name="E:\work\Rcm\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="kgc" />
+      <recent name="" />
+      <recent name="com.kgc" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.kgc.recall" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\backup\f\sunyong\Java\课件\数仓项目\4.基于物联网的物流数仓系统项目\03-项目源码\kgc_datawarehouse\src\main\resources" />
+      <recent name="E:\datawarehouse\test\kgc2\src\main\resources" />
+      <recent name="E:\datawarehouse\kgc\src\main\resources" />
+      <recent name="E:\datawarehouse\kgc\src\main\scala\cn\kgc\exp\util" />
+      <recent name="E:\datawarehouse\kgc\src\main\resources\xml" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.DataClean">
+    <configuration name="DataClean (1)" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="kgc.test.DataClean" />
+      <module name="kgc" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kgc.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataClean" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="cn.kgc.exp.preprocess.DataClean" />
+      <module name="kgc" />
+      <option name="PROGRAM_PARAMETERS" value="1 1h 2019-12-12 18:00:00 true local" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.kgc.exp.preprocess.DataClean" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Forecast" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="cn.kgc.exp.process.Forecast" />
+      <module name="kgc" />
+      <option name="PROGRAM_PARAMETERS" value="2019-12-12 18:15:00 3 local" />
+      <option name="VM_PARAMETERS" value="-Xss4m" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.kgc.exp.process.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="T" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="cn.kgc.exp.spark.T" />
+      <module name="kgc" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.kgc.exp.process.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ToScan" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="cn.kgc.exp.process.ToScan" />
+      <module name="kgc" />
+      <option name="PROGRAM_PARAMETERS" value="2019-12-12 18:15:00 local" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.kgc.exp.process.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Warning" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="cn.kgc.exp.process.Warning" />
+      <module name="kgc" />
+      <option name="PROGRAM_PARAMETERS" value="2019-12-12 18:15:00 local" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Warning" />
+      <item itemvalue="Application.T" />
+      <item itemvalue="Application.DataClean" />
+      <item itemvalue="Application.ToScan" />
+      <item itemvalue="Application.Forecast" />
+      <item itemvalue="Application.DataClean (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DataClean" />
+        <item itemvalue="Application.DataClean (1)" />
+        <item itemvalue="Application.Forecast" />
+        <item itemvalue="Application.ToScan" />
+        <item itemvalue="Application.T" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\fgm\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5fc8f8f-8aea-40f8-8685-735ac3dab85f" name="Default" comment="" />
+      <created>1560663040761</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560663040761</updated>
+      <workItem from="1560663044189" duration="1564000" />
+      <workItem from="1560664660531" duration="2043000" />
+      <workItem from="1560666759137" duration="1836000" />
+      <workItem from="1560668693620" duration="1376000" />
+      <workItem from="1561989141774" duration="213000" />
+      <workItem from="1562500050621" duration="1405000" />
+      <workItem from="1562501500571" duration="1759000" />
+      <workItem from="1562503318143" duration="1762000" />
+      <workItem from="1562505131783" duration="1765000" />
+      <workItem from="1562507115911" duration="1763000" />
+      <workItem from="1562508964247" duration="1762000" />
+      <workItem from="1562510785497" duration="1763000" />
+      <workItem from="1562512600344" duration="1206000" />
+      <workItem from="1562763785428" duration="1700000" />
+      <workItem from="1562981198084" duration="2000" />
+      <workItem from="1562981295521" duration="1566000" />
+      <workItem from="1562983111774" duration="1763000" />
+      <workItem from="1562984929579" duration="1702000" />
+      <workItem from="1564161121429" duration="2152000" />
+      <workItem from="1565276360335" duration="5648000" />
+      <workItem from="1565362556122" duration="362000" />
+      <workItem from="1566306182071" duration="3673000" />
+      <workItem from="1566477226230" duration="8211000" />
+      <workItem from="1566717379044" duration="10468000" />
+      <workItem from="1567305786883" duration="595000" />
+      <workItem from="1567943565760" duration="2169000" />
+      <workItem from="1567946320086" duration="758000" />
+      <workItem from="1568174103601" duration="125000" />
+      <workItem from="1568203615020" duration="1036000" />
+      <workItem from="1568716232042" duration="4209000" />
+      <workItem from="1568722842279" duration="7608000" />
+      <workItem from="1568802911943" duration="2468000" />
+      <workItem from="1569373368610" duration="100000" />
+      <workItem from="1569496293060" duration="78000" />
+      <workItem from="1570886504819" duration="433000" />
+      <workItem from="1570983117726" duration="1583000" />
+      <workItem from="1571055093586" duration="1424000" />
+      <workItem from="1571056896322" duration="956000" />
+      <workItem from="1571070024683" duration="168000" />
+      <workItem from="1571570725149" duration="1000" />
+      <workItem from="1571570811595" duration="1782000" />
+      <workItem from="1571572631533" duration="599000" />
+      <workItem from="1571577689624" duration="77000" />
+      <workItem from="1571578284270" duration="18000" />
+      <workItem from="1571578338494" duration="33000" />
+      <workItem from="1571579393891" duration="986000" />
+      <workItem from="1571581258117" duration="1786000" />
+      <workItem from="1571583257427" duration="839000" />
+      <workItem from="1571586084567" duration="1784000" />
+      <workItem from="1571587933697" duration="1785000" />
+      <workItem from="1571589752146" duration="1842000" />
+      <workItem from="1571591638341" duration="1043000" />
+      <workItem from="1571791382770" duration="71000" />
+      <workItem from="1583113802619" duration="2448000" />
+      <workItem from="1583117360257" duration="2163000" />
+      <workItem from="1583128931224" duration="2153000" />
+      <workItem from="1583132887242" duration="1906000" />
+      <workItem from="1583135418365" duration="9699000" />
+      <workItem from="1583214181546" duration="10258000" />
+      <workItem from="1583237921165" duration="21085000" />
+      <workItem from="1583300930496" duration="940000" />
+      <workItem from="1583326109980" duration="10041000" />
+      <workItem from="1583504686016" duration="4129000" />
+      <workItem from="1583509126437" duration="11532000" />
+      <workItem from="1599615072753" duration="9932000" />
+      <workItem from="1599698010213" duration="4133000" />
+      <workItem from="1599729258440" duration="1400000" />
+      <workItem from="1599784582670" duration="7040000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="192679000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1296" height="736" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.32605177" />
+      <window_info active="true" id="Project Explorer" order="6" visible="true" weight="0.32995737" />
+      <window_info id="Job Explorer" order="7" />
+      <window_info id="Structure" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2885572" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="DB Execution Console" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4936034" weight="0.18131258" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5063966" side_tool="true" weight="0.25041458" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Console" order="11" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3283582" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.32928804" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Commander" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info active="true" anchor="right" id="DB Browser" order="8" visible="true" weight="0.20682302" />
+      <window_info anchor="right" id="SciView" order="9" />
+      <window_info anchor="right" id="Database" order="10" />
+      <window_info anchor="right" id="Bean Validation" order="11" weight="0.32928804" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.18017058" />
+      <window_info active="true" id="Project Explorer" order="6" visible="true" weight="0.32995737" />
+      <window_info id="Job Explorer" order="7" />
+      <window_info id="Structure" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.14571746" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="DB Execution Console" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5063966" side_tool="true" weight="0.44716352" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4936034" weight="0.18131258" />
+      <window_info anchor="bottom" id="Console" order="11" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.18603411" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Commander" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info active="true" anchor="right" id="DB Browser" order="8" visible="true" weight="0.20682302" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/kgc/generate/CreateUserLog.java</url>
+          <line>164</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/com/kgc/recall/LogisticRegression.scala</url>
+          <line>85</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://E:/work/mavenjar/repository/commons-lang/commons-lang/2.6/commons-lang-2.6-sources.jar!/org/apache/commons/lang/time/FastDateFormat.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/spark/T.scala" />
+    <entry file="jar://E:/work/mavenjar/repository/org/scala-lang/scala-library/2.10.4/scala-library-2.10.4-sources.jar!/scala/collection/immutable/StringLike.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/local.properties" />
+    <entry file="jar://E:/work/mavenjar/repository/org/apache/spark/spark-sql_2.10/2.1.0/spark-sql_2.10-2.1.0-sources.jar!/org/apache/spark/sql/DataFrameReader.scala" />
+    <entry file="jar://E:/work/mavenjar/repository/org/apache/spark/spark-sql_2.10/2.1.0/spark-sql_2.10-2.1.0-sources.jar!/org/apache/spark/sql/DataFrameWriter.scala" />
+    <entry file="file://$PROJECT_DIR$/target/classes/resource.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hs_err_pid18108.log" />
+    <entry file="jar://E:/Java/jdk1.8.0u202/src.zip!/java/lang/Thread.java" />
+    <entry file="jar://E:/Java/jdk1.8.0u202/src.zip!/java/lang/ClassLoader.java" />
+    <entry file="jar://E:/Java/jdk1.8.0u202/src.zip!/java/io/FileInputStream.java" />
+    <entry file="jar://E:/Maven/maven_jar/org/apache/spark/spark-sql_2.11/2.2.0/spark-sql_2.11-2.2.0.jar!/org/apache/spark/sql/DataFrameWriter.class" />
+    <entry file="jar://E:/Java/jdk1.8.0u202/jre/lib/rt.jar!/sun/reflect/Reflection.class" />
+    <entry file="jar://E:/Java/jdk1.8.0u202/src.zip!/java/sql/DriverManager.java" />
+    <entry file="jar://E:/Maven/maven_jar/org/apache/spark/spark-sql_2.11/2.2.0/spark-sql_2.11-2.2.0.jar!/org/apache/spark/sql/SaveMode.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/exp.sql" />
+    <entry file="jar://E:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Properties.java" />
+    <entry file="file://$PROJECT_DIR$/hs_err_pid26440.log" />
+    <entry file="jar://E:/Maven/maven_jar/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8-sources.jar!/scala/Predef.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/WarningLocal.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="136" column="56" selection-start-line="136" selection-start-column="52" selection-end-line="136" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Java/jdk1.8.0_102/src.zip!/java/lang/StackOverflowError.java" />
+    <entry file="jar://D:/Java/jdk1.8.0_102/src.zip!/java/lang/Double.java" />
+    <entry file="db://8ca3d0e6-d44e-45d4-83b8-67fc3b6497fb/consoles/Connection" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-sql_2.11/2.2.0/spark-sql_2.11-2.2.0.jar!/org/apache/spark/sql/Dataset.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-sql_2.11/2.2.0/spark-sql_2.11-2.2.0-sources.jar!/org/apache/spark/sql/Dataset.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/Warning.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/process/ToScan.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="40" column="100" selection-start-line="40" selection-start-column="100" selection-end-line="40" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/process/Warning.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/utils/RegTempOrWriteHive.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="81" column="40" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/utils/XMLSqlParsers.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/process/Forecast.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1473">
+          <caret line="223" selection-start-line="223" selection-end-line="223" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/utils/DateUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="261" column="2" selection-start-line="261" selection-start-column="2" selection-end-line="261" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/utils/SparkMode.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="701">
+          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mysql.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/1h.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/SQLsource.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1456">
+          <caret line="44" column="4" lean-forward="true" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resource.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes.timestamp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kgc.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/Forecast.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="463" column="21" selection-start-line="463" selection-start-column="21" selection-end-line="463" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/preprocess/DataClean.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="e#31#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://G:/jarstore/org/apache/spark/spark-sql_2.11/2.2.0/spark-sql_2.11-2.2.0.jar!/org/apache/spark/sql/DataFrameWriter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://G:/jarstore/org/apache/spark/spark-sql_2.11/2.2.0/spark-sql_2.11-2.2.0-sources.jar!/org/apache/spark/sql/DataFrameWriter.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-790">
+          <caret line="355" lean-forward="true" selection-start-line="355" selection-end-line="355" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/kgc/test/DataClean.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#18#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/preprocess/Df2Hive.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="186" column="12" selection-start-line="186" selection-start-column="12" selection-end-line="186" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/ToScan.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/ToScanLocal.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1415">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/ForecastLocal.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="438" column="5" selection-start-line="438" selection-start-column="5" selection-end-line="438" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cn/kgc/exp/preprocess/CleanProcess.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="177" column="85" lean-forward="true" selection-start-line="177" selection-start-column="85" selection-end-line="177" selection-end-column="85" />
+          <folding>
+            <element signature="e#31#64#0" expanded="true" />
+            <element signature="e#1196#3024#0" />
+            <element signature="e#1521#1655#0" />
+            <element signature="e#1840#2165#0" />
+            <element signature="e#1908#1971#0" />
+            <element signature="e#1977#2159#0" />
+            <element signature="e#2171#2321#0" />
+            <element signature="e#3029#4083#0" />
+            <element signature="e#3407#3675#0" />
+            <element signature="e#4087#4156#0" />
+            <element signature="e#4087#4727#0" />
+            <element signature="e#4260#4654#0" />
+            <element signature="e#4309#4570#0" />
+            <element signature="e#4355#4415#0" />
+            <element signature="e#4576#4648#0" />
+            <element signature="e#4660#4722#0" />
+            <element signature="e#4731#4793#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>kgc:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.42145595" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.42145595" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.11.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.42145595" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.42145595" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>kgc</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.42145595" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.42145595" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

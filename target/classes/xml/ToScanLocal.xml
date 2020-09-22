@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--<!DOCTYPE selects SYSTEM "../SqlDTD.dtd">-->
+<!DOCTYPE selects [
+		<!ELEMENT selects (select*)>
+		<!ATTLIST selects namespace CDATA #REQUIRED>
+
+		<!ELEMENT select (#PCDATA)>
+		<!ATTLIST select id ID #REQUIRED>]>
+
+
+<selects namespace="com.scala.xml.UnloadUnscan">
+
+	<!--对卸车运单进行拆包并限定部门重量及时间-->
+	<select id="tmp1">
+		     select
+				nvl(box.waybill_number,unload_detail.waybill_number) waybill_number,	--运单号
+				unload_detail.now_department_code, 	--卸车部门编码
+				unload_detail.create_time,	--扫描时间
+				unload_detail.device_type,	--扫描方式
+				unload_detail.assignment_number, --卸车任务号
+				'{endTime}' refresh_time --刷新时间
+            from  volume_unload_detail_clean unload_detail
+			--拆包限定部门为集散中心
+			left join volume_box_clean box
+				on unload_detail.waybill_number = box.task_number
+				and box.valid_status = 1
+			join volume_basic basic
+				on unload_detail.now_department_code = basic.code
+				and basic.center = 'Y'
+	</select>
+
+	<!--获取卸车未扫-->
+	<select id="res1">
+
+		select
+			unload.now_department_code,	--卸车部门编码
+			unload.waybill_number,	--货物号:运单号,包号或笼号
+			unload.create_time,	--扫描时间
+			unload.device_type,	--扫描方式
+			unload.assignment_number,	--卸车任务号
+			path.waybill_route_codes, --走货路径
+			unload.refresh_time --刷新时间
+		from tmp1 unload
+		left join volume_path_clean path
+			on unload.waybill_number = path.waybill_number
+		left join volume_scan  scan
+			ON unload.waybill_number = scan.waybill_number
+			AND unload.now_department_code = scan.operation_org_code
+		where scan.waybill_number is null
+
+
+	</select>
+
+
+</selects>

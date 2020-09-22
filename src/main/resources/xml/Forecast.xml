@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--<!DOCTYPE selects SYSTEM "src/main/resources/mapper-dtd/SqlDTD.dtd">-->
+<!DOCTYPE selects [
+        <!ELEMENT selects (select*)>
+        <!ATTLIST selects namespace CDATA #REQUIRED>
+
+        <!ELEMENT select (#PCDATA)>
+        <!ATTLIST select id ID #REQUIRED>]>
+<selects namespace="cn.kgc.exp.process.Forecast">
+
+    <!--组织机构信息去重 -->
+    <select id="tmp1">
+        select
+            tmp.code,
+            tmp.prov_code,
+            tmp.center
+        from(
+            select
+                code,
+                prov_code,
+                center,
+                row_number() over(partition by code order by create_time desc) rn
+            from exp.volume_basic
+            where is_active = 'Y'
+        )tmp
+        where tmp.rn = 1
+    </select>
+
+
+    <!--获取线路基础资料-->
+    <select id="tmp2">
+
+        select
+        tmp.leave_department_code,    --出发站
+        tmp.arrive_department_code,    --到达站
+        tmp.leave_time, --准点出发时间
+        max(nvl(tmp.run_minutes,0)) run_minutes, --运输时长(小时)
+        max(nvl(tmp.unload_time,0)) unload_time,  --操作时长（小时）
+        max(tmp.type) type  --类型
+        from
+        (
+        --干线
+        select
+        leave_department_code,    --出发站
+        arrive_department_code,    --到达站
+        leave_time, --准点出发时间
+        run_minutes,    --运输时长(小时)
+        unload_time,      --操作时长(小时)
+        type
+        from exp.volume_line
+        union all
+        --支线
+        select
+        leave_department_code,    --出发站
+        arrive_department_code,    --到达站
+        leave_time, --准点出发时间
+        run_minutes,    --运输时长(小时)
+        unload_time,      --操作时长(小时)
+        type
+        from exp.volume_branch_line
+        where type != 'airplane'
+        union all
+        --合伙人
+        select
+        leave_department_code,    --出发站
+        arrive_department_code,    --到达站
+        leave_time, --准点出发时间
+        run_minutes,    --运输时长(小时)
+        unload_time,      --操作时长(小时)
+        'partner' type
+        from exp.volume_partner_line
+        ) tmp
+        where (tmp.leave_time != 'NULL'
+        and tmp.leave_time != 'null'
+        and tmp.leave_time != ''
+        and tmp.leave_time != ' '
+        and tmp.leave_time is not null )
+        group by tmp.leave_department_code,tmp.arrive_department_code,tmp.leave_time
+
+    </select>
+
+
+    <!--修正线路基础资料-->
+    <select id="tmp3">
+
+        select
+            tmp.leave_department_code,    --出发站
+            tmp.arrive_department_code,    --到达站
+            tmp.leave_time, --准点出发时间
+            max(tmp.run_minutes) run_minutes, --运输时长(小时)
+            max(tmp.unload_time) unload_time  --操作时长(小时)
+        from(
+            --外场到合伙人营业部线路中夹杂自营营业部或外场
+            select
+                nvl(d.leave_department_code,a.leave_department_code) leave_department_code,    --出发站
+                a.arrive_department_code,    --到达站
+                nvl(d.leave_time,a.leave_time) leave_time, --准点出发时间
+                (a.run_minutes + case when d.run_minutes is null then 0 else d.run_minutes end) run_minutes, --运输时长(小时)
+                (a.unload_time + case when d.unload_time is null then 0 else d.unload_time end) unload_time  --操作时长(小时)
+            from tmp2 a
+            left join tmp2 d
+                on a.leave_department_code = d.arrive_department_code
+            where a.type = 'partner'
+
+            union all
+            --合伙人营业部到外场线路中夹杂自营营业部或外场
+            select
+                a.leave_department_code,    --出发站
+                nvl(d.arrive_department_code,a.arrive_department_code) arrive_department_code,    --到达站
+                a.leave_time, --准点出发时间
+                (a.run_minutes + case when d.run_minutes is null then 0 else d.run_minutes end) run_minutes, --运输时长(小时)
+                (a.unload_time + case when d.unload_time is null then 0 else d.unload_time end) unload_time  --操作时长(小时)
+            from tmp2 a
+            left join tmp2 d
+            on a.arrive_department_code = d.leave_department_code
+            where a.type = 'partner'
+
+            union all
+            --原表数据
+            select
+                a.leave_department_code,    --出发站
+                a.arrive_department_code,    --到达站
+                a.leave_time, --准点出发时间
+                a.run_minutes, --运输时长(小时)
+                a.unload_time  --操作时长(小时)
+            from tmp2 a
+            ) tmp
+        group by tmp.leave_department_code,tmp.arrive_department_code,tmp.leave_time
+
+    </select>
+
+    <!--获取未签收运单-->
+    <select id="tmp4">
+
+        select
+            t.waybill_number,                     --运单号
+            t.bill_time,
+            nvl(t.goods_weight,0) goods_weight,                 --总重量(在此处总重量等于开单重量)
+            nvl(t.goods_volume,0) goods_volume,                 --总体积(在此处总体积等于开单重量)
+            nvl(t.goods_weight,0) bill_weight,         --开单重量
+            nvl(t.goods_volume,0) bill_volume,         --开单体积
+            nvl(t.goods_qty,0) bill_qty,               --开单件数
+            t.receive_department_code,               --收货部门
+            t.billing_department_code,               --开单部门
+            org1.prov_code bill_prov_code,
+            org2.prov_code pickup_prov_code,
+            if(next.equal_province = 'Y','Y','N') next_day_arrive,
+            t.customer_pickup_department_code
+        from exp.volume_waybill_clean_1h t
+        left join exp.volume_sign_clean_1h sign
+            on t.waybill_number = sign.waybill_number
+        left join tmp1 org1
+            on t.billing_department_code = org1.code
+        left join tmp1 org2
+            on t.customer_pickup_department_code = org2.code
+        left join exp.volume_same_day next
+            on org1.prov_code = next.leave_province_code
+            and org2.prov_code = next.arrive_province_code
+        where t.is_active = 'Y'
+            and sign.waybill_number is null
+
+    </select>
+
+    <!--运单在库存中最新记录-->
+    <select id="tmp5">
+       select
+            tmp.waybill_number,                                 --运单号
+            tmp.receive_org_code,                           --收货部门
+            tmp.in_stock_time
+        from
+            (
+				select
+					stock.waybill_number,                      --运单号
+					stock.department_code receive_org_code,                --入库部门
+					stock.stock_time in_stock_time,               --入库时间
+					row_number() over(partition by stock.waybill_number order by stock.create_time desc) rn
+				from exp.volume_stock_clean_1h stock
+				where stock.waybill_type = 'WAYBILL'
+
+            ) tmp
+        where tmp.rn = 1
+
+
+    </select>
+
+    <!--装车任务关联获取相关时间-->
+    <select id="tmp6">
+
+        select
+            a.waybill_number,       --运单号
+            a.car_number,
+            coalesce(a.waybill_weight,waybill.goods_weight,0) goods_weight,            --快递重量
+            coalesce(a.waybill_volume,waybill.goods_volume,0) goods_volume,
+            a.leave_department_code,               --出发部门代码
+            a.arrive_department_code,               --到达部门代码
+            a.depart_time,            --出发时间
+            a.arrive_time,            --到达时间
+            a.plan_arrive_time,                          --预计到达时间
+            a.create_time
+        from
+            (
+            select
+                tmp2.waybill_number,       --运单号
+                tmp2.car_number,
+                tmp2.waybill_weight,            --快递重量
+                tmp2.waybill_volume,
+                tmp2.leave_department_code,               --出发部门代码
+                tmp2.arrive_department_code,               --到达部门代码
+                tmp2.depart_time,            --出发时间
+                tmp2.arrive_time,            --到达时间
+                tmp2.plan_arrive_time,                          --预计到达时间
+                tmp2.create_time       --创建时间
+            from (select
+                    tmp.*,
+                    row_number() over(partition by tmp.waybill_number order by tmp.create_time desc) rn
+                 from (select
+                            nvl(box.waybill_number, load_detail.waybill_number) as waybill_number,       --运单号
+                            traffic_detail.car_number,
+                            box.waybill_weight,            --快递重量
+                            box.waybill_volume,
+                            load.leave_department_code,               --出发部门代码
+                            load.arrive_department_code,               --到达部门代码
+                            traffic_detail.actual_leave_department_time  depart_time,            --出发时间
+                            traffic_detail.actual_arrive_department_time  arrive_time,            --到达时间
+                            traffic_detail.plan_arrive_department_time  plan_arrive_time,           --预计到达时间
+                            nvl(load_detail.create_time,load.end_time) create_time       --创建时间
+                        from exp.volume_load_clean_1h load --装车任务
+                        join exp.volume_load_detail_clean_1h load_detail --装车任务明细bill_time
+                            on load.assignment_number = load_detail.assignment_number
+                            and load.is_active = '1'
+                            and load_detail.is_active = '1'
+                        left join exp.volume_box_clean_1h box --包
+                            ON load_detail.waybill_number = box.task_number
+                            AND box.valid_status = '1'
+                        join exp.volume_traffic_clean_1h traffic  --运输任务
+                            on load.assignment_number = traffic.assignment_number
+                            and traffic.is_active = 'Y'
+                        join exp.volume_traffic_detail_clean_1h traffic_detail   --运输任务明细
+                            on traffic.transport_task_id = traffic_detail.transport_task_id
+                            and traffic_detail.transport_task_status != 'CANCLE'
+                            and traffic_detail.is_active = 'Y'
+                        )tmp
+                ) tmp2
+                where tmp2.rn = 1
+            ) a
+
+        join exp.volume_waybill_clean_1h waybill
+            on a.waybill_number = waybill.waybill_number
+            and waybill.is_active = 'Y'
+
+    </select>
+    <!--关联线路时效获取车辆时间-->
+    <select id="tmp7">
+        select
+            tmp.waybill_number,               --运单号
+            tmp.car_number,               --车牌号
+            tmp.goods_weight,             --重量
+            tmp.goods_volume,             --体积
+            tmp.leave_department_code,            --出发部门编码
+            tmp.arrive_department_code,            --到达部门编码
+            tmp.depart_time,              --出发时间
+            tmp.plan_arrive_time,         --预计到达时间
+            tmp.arrive_time,              --到达时间
+            tmp.run_minutes,              --运输时长
+            tmp.unload_time,              --操作时长
+            tmp.create_time               --创建时间
+        from(
+            select
+                t.waybill_number,               --运单号
+                t.car_number,               --车牌号
+                t.goods_weight,             --重量
+                t.goods_volume,             --体积
+                t.leave_department_code,            --出发部门编码
+                t.arrive_department_code,            --到达部门编码
+                t.depart_time,              --出发时间
+                t.plan_arrive_time,           --预计到达时间
+                t.arrive_time,                  --到达时间
+                l.run_minutes,              --运输时长
+                l.unload_time,              --操作时长
+                t.create_time,              --创建时间
+                row_number() over(partition by t.waybill_number order by abs(nvl(minus(t.depart_time,concat(to_date(t.depart_time),' ',l.leave_time)),0.0)) asc) hours_rn
+            from tmp6 t
+            left join tmp3 l --线路时效基础资料
+                on t.leave_department_code = l.leave_department_code
+               and t.arrive_department_code = l.arrive_department_code
+        )tmp
+        where tmp.hours_rn = 1
+    </select>
+
+    <!--计算可出发时间接收部门运单状态-->
+    <!--未签收的运单需要满足要么在装车任务，要么在库存-->
+    <select id="tmp8">
+        select
+            wb.waybill_number,               --运单号
+            wb.bill_time old_bill_time,
+            case
+                when stk.in_stock_time > coalesce(hb.arrive_time,hb.depart_time,hb.create_time) then
+                    '{endTime}'
+                when hb.waybill_number is not null then
+                    case
+                        when hb.depart_time is null and hb.arrive_time is null then
+                            '{endTime}'
+                        when hb.depart_time is not null and hb.arrive_time is null then
+                            case when hb.plan_arrive_time > '{endTime}'
+                                then addMinutes(hb.plan_arrive_time , nvl(hb.unload_time,0)*60,"TIME")
+                            else
+                                addMinutes('{endTime}', nvl(hb.unload_time,0)*60,"TIME")
+                            end
+                        when hb.arrive_time is not null then
+                            case when addminutes(hb.arrive_time, nvl(hb.unload_time,0) * 60, "TIME") > '{endTime}'
+                                then addminutes(hb.arrive_time, nvl(hb.unload_time,0) * 60, "TIME")
+                            else
+                                '{endTime}'
+                            end
+                    end
+            end bill_time,      --重新计算的可出发时间
+            wb.goods_weight,             --重量
+            wb.goods_volume,             --体积
+            1.0 goods_qty,               --件数
+            wb.bill_weight,                                --开单重量
+            wb.bill_volume,                                --开单体积
+            wb.bill_qty,                                   --开单件数
+            case
+                when stk.in_stock_time > coalesce(hb.arrive_time,hb.depart_time,hb.create_time) then
+                    stk.receive_org_code        --库存部门
+                when hb.waybill_number is not null then
+                    case
+                        when hb.arrive_time is null then
+                            concat(hb.leave_department_code,"_",hb.arrive_department_code)  --装车任务(未出发/已出发未到达)
+                        else
+                            hb.arrive_department_code  --装车任务(已出发已到达)
+                    end
+            end receive_org_code,   --重新计算后的接收部门
+            wb.billing_department_code,
+            wb.bill_prov_code,
+            wb.pickup_prov_code,
+            wb.next_day_arrive,
+            wb.customer_pickup_department_code,
+            stk.in_stock_time,                              --入库时间
+            case
+                when stk.in_stock_time > coalesce(hb.arrive_time,hb.depart_time,hb.create_time) then
+                    'stock'     --库存
+                when hb.waybill_number is not null then
+                    case
+                        when hb.depart_time is null and hb.arrive_time is null then
+                            'load_nodepart' --装车未出发
+                        when hb.depart_time is not null and hb.arrive_time is null then
+                            'load_noarrive' --装车未到达
+                        when hb.arrive_time is not null then
+                            'load_arriveed' --装车已到达
+                    end
+            end waybill_status,     --计算的运单状态
+            hb.depart_time,
+            hb.arrive_time,
+            hb.car_number,
+            hb.leave_department_code,
+            hb.arrive_department_code,
+            hb.goods_weight hb_weight,
+            hb.goods_volume hb_volume,
+            hb.plan_arrive_time
+        from tmp4 wb
+        left join tmp5 stk
+            on wb.waybill_number = stk.waybill_number
+        left join tmp7 hb
+            on wb.waybill_number = hb.waybill_number
+        where stk.waybill_number is not null or hb.waybill_number is not null
+    </select>
+
+    <!--对于装车任务中已出发未到达的车辆里的运单由此算出结果-->
+    <select id="res1">
+        select
+            td.waybill_number,                           --运单号
+            td.old_bill_time,
+            td.car_number,
+            td.depart_time bill_time,               --新开单时间
+            td.hb_weight goods_weight,                         --总重量
+            td.hb_volume goods_volume,                         --总体积
+            1 goods_qty,                            --总件数
+            td.bill_weight,                                --开单重量
+            td.bill_volume,                                --开单体积
+            td.bill_qty,                                   --开单件数
+            td.leave_department_code,                     --收货部门
+            td.arrive_department_code,                     --收货部门
+            td.customer_pickup_department_code,
+            null start_time,
+            td.plan_arrive_time end_time,
+            case
+                when org1.center = 'Y' and org2.center = 'Y' then
+                    '支线'
+                else
+                    '干线'
+            end line_type,
+            'way' waybill_type,
+            'way' waybill_status,
+            td.next_day_arrive,
+            td.leave_department_code pre_org_code,
+            '1' path_no,
+            org1.center depart_org_transfer,
+            org2.center arrive_org_transfer,
+            '{endTime}' refresh_time,
+            current_timestamp() create_time
+        from tmp8 td --装车任务
+        left join tmp1 org1
+            on td.leave_department_code = org1.code
+        left join tmp1 org2
+            on td.arrive_department_code = org2.code
+        where td.waybill_status = 'load_noarrive'
+            and td.leave_department_code is not null
+            and td.arrive_department_code is not null
+            and td.plan_arrive_time is not null
+            and org2.center = 'Y'
+    </select>
+
+    <select id="tmp9">
+        select
+            route.waybill_number,
+            route.waybill_route_codes AS lines
+        from exp.volume_path_clean_1h route
+        join tmp8 wb
+            on route.waybill_number = wb.waybill_number
+    </select>
+
+
+    <!--非在途-->
+    <select id="res2">
+        select
+            hb.waybill_number,
+            hb.old_bill_time,
+            hb.car_number,
+            hb.bill_time,
+            hb.goods_weight,
+            hb.goods_volume,
+            hb.goods_qty,
+            hb.bill_weight,                                --开单重量
+            hb.bill_volume,                                --开单体积
+            hb.bill_qty,                                   --开单件数
+            hb.depart_org_code leave_department_code,
+            hb.arrive_org_code arrive_department_code,
+            hb.customer_pickup_department_code,
+            hb.start_time,
+            hb.end_time,
+            case
+                when org1.center = 'Y' and org2.center = 'Y' then
+                    '干线'
+                else
+                    '支线'
+            end line_type,
+            hb.waybill_status waybill_type,
+            'other' waybill_status,
+            hb.next_day_arrive,
+            hb.pre_org_code,
+            hb.path_no,
+            org1.center depart_org_transfer,
+            org2.center arrive_org_transfer,
+            '{endTime}' refresh_time,
+            current_timestamp() create_time
+        from tm_t_not_way hb
+        left join tmp1 org1
+            on hb.depart_org_code = org1.code
+        left join tmp1 org2
+            on hb.arrive_org_code = org2.code
+        left join tmp1 org3
+            on hb.pre_org_code = org3.code
+        where org1.center = 'Y' or org2.center = 'Y'
+    </select>
+
+</selects>

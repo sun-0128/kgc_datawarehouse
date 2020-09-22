@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--<!DOCTYPE selects SYSTEM "../SqlDTD.dtd">-->
+<!DOCTYPE selects [
+        <!ELEMENT selects (select*)>
+        <!ATTLIST selects namespace CDATA #REQUIRED>
+
+        <!ELEMENT select (#PCDATA)>
+        <!ATTLIST select id ID #REQUIRED>]>
+<selects namespace="com.scala.xml.LoadWarning">
+
+    <!-- 查询规定时间内，指定部分外场的所有的卸车运单，拆包-->
+    <select id="tmp1">
+        select
+            temp.waybill_no,
+            temp.unload_org_code,
+            temp.unload_time
+        from
+            (   -- 剔除卸车过程中包中运单被反复扫描操作
+            select
+                a.*,
+                row_number() over(partition by a.waybill_no,a.unload_org_code order by a.unload_time desc) rn
+            from
+                (
+                -- 限定部门为集散中心并拆包
+
+                select
+                    nvl(box.waybill_number,unload_detail.waybill_number) waybill_no,
+                    unload_detail.now_department_code unload_org_code,
+                    unload_detail.create_time unload_time
+                from volume_unload_detail_clean unload_detail
+                join volume_basic basic
+                    on unload_detail.now_department_code = basic.code
+                    and basic.center = 'Y'
+                left join volume_box_clean box
+                    on unload_detail.waybill_number = box.task_number
+                    and box.valid_status = 1
+                ) a
+            ) temp
+        where temp.rn = 1
+    </select>
+
+
+    <!-- 查询规定时间内，指定外场的所有装车运单，拆包-->
+    <select id="tmp2">
+        select
+            nvl(box.waybill_number,load_detail.waybill_number) waybill_no,
+            load_detail.leave_department_code load_org_code
+        from volume_load_detail_clean load_detail
+        join volume_basic basic
+            on load_detail.leave_department_code = basic.code
+            and basic.center = 'Y'
+        left join volume_box_clean box
+            on load_detail.waybill_number = box.task_number
+            and box.valid_status = 1
+            and load_detail.device_type != 'PC'
+            and load_detail.is_active = 1
+
+    </select>
+
+
+    <!-- 查询规定时间内，指定部门，绑定时间为最新的所有托盘绑定叉车扫描的运单，拆包-->
+    <select id="tmp3">
+        select
+            temp.waybill_no,
+            temp.tray_time,
+            temp.tray_org_code
+        from
+            (
+                select
+                    a.*,
+                    row_number() over(partition by a.waybill_no , a.tray_org_code order by a.tray_time desc) rn
+                from
+                (
+                select
+                    nvl(box.waybill_number,pallet_detail.waybill_number) waybill_no,
+                    pallet_detail.create_time tray_time,
+                    pallet_detail.org_code tray_org_code
+                from volume_pallet_detail pallet_detail
+                join volume_basic basic
+                    on pallet_detail.org_code = basic.code
+                    and basic.center = 'Y'
+                left join volume_box_clean box
+                    on pallet_detail.waybill_number = box.task_number
+                    and box.valid_status = 1
+                ) a
+            ) temp
+        where temp.rn = 1
+
+
+</select>
+
+
+<!-- 查询规定时间内，指定部门的所有上分拣扫描的运单并拆包剔除重复操作运单-->
+    <select id="tmp4">
+        select
+            temp.waybill_no,
+            temp.sort_org_code,
+            temp.sort_time
+        from
+            (
+            select
+                a.*,
+                row_number() over(partition by a.waybill_no,a.sort_org_code order by a.sort_time ) rn
+            from
+                (
+                select
+                    nvl(box.waybill_number,scan.waybill_number) waybill_no,
+                    scan.operation_org_code sort_org_code,
+                    scan.create_time sort_time
+                from volume_scan scan
+                join volume_basic basic
+                    on scan.operation_org_code = basic.code
+                    and basic.center = 'Y'
+                left join volume_box_clean box
+                    on scan.waybill_number = box.task_number
+                    and box.valid_status = 1
+                ) a
+            ) temp
+        where temp.rn = 1
+    </select>
+
+    <!-- 筛选没有装车的所有运单，判断出运单所在的位置-->
+    <select id="res1">
+        with load_warning_valid_waybill as
+        (  -- 筛选出已卸车没有进行装车或者没有签收的的运单并且在库存的
+        select
+            a.waybill_no,
+            a.unload_org_code,
+            a.unload_time
+        from
+            (
+            select
+                unload.waybill_no,
+                unload.unload_org_code,
+                unload.unload_time,
+                case
+                when load.waybill_no is not null or signoff.waybill_number is not null  then 'N'
+                else 'Y'
+                end flag
+            from tmp1 unload
+            left join tmp2 load
+                on unload.waybill_no = load.waybill_no
+                and unload.unload_org_code = load.load_org_code
+            left join volume_sign_clean signoff
+                on unload.waybill_no = signoff.waybill_number
+            join volume_stock_clean stock
+                on unload.waybill_no = stock.waybill_number
+                and unload.unload_org_code = stock.department_code
+            ) a
+        where a.flag = 'Y'
+        )
+
+        -- 关联托盘绑定,分拣扫描表获取相应字段
+        select
+            waybill.waybill_no,
+            waybill.unload_org_code,
+            waybill.unload_time,
+            tray.tray_time,
+            scan.sort_org_code,
+            scan.sort_time,
+            case
+            when scan.sort_time is not null then '可装车'
+            when scan.sort_time is null and tray.tray_time is not null then '可分拣'
+            else '在站台'
+            end expect_place,
+            '{endTime}' refresh_time
+        from load_warning_valid_waybill waybill
+        left join tmp3 tray
+            on waybill.waybill_no = tray.waybill_no
+            and waybill.unload_org_code = tray.tray_org_code
+        left join tmp4 scan
+            on waybill.waybill_no = scan.waybill_no
+            and waybill.unload_org_code = scan.sort_org_code
+
+    </select>
+
+
+
+</selects>
